@@ -7,6 +7,7 @@ import { BiSolidFileJpg } from "react-icons/bi";
 import { TbFileTypeTxt } from "react-icons/tb";
 import Slider from "react-slick";
 import FeatureCard from "./FeatureCard";
+import { useRouter } from "next/navigation";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -31,6 +32,7 @@ function SampleNextArrow(props: any) {
 }
 
 function Responsive() {
+  const router = useRouter();
   var settings = {
     dots: false,
     autoplay: true,
@@ -69,7 +71,10 @@ function Responsive() {
     ],
   };
   return (
-    <div className="slider-container w-[93vw] px-6 ">
+    <div
+      className="slider-container w-[93vw] px-6 "
+      onClick={() => router.push("https://www.hipdf.com/all-tools")}
+    >
       <Slider {...settings}>
         <FeatureCard
           text="Easily convert pdf to word documents"

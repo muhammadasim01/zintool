@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaYoutube, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
+  const router = useRouter();
   return (
-    <footer className="bg-white px-6 py-4 mt-6">
+    <footer
+      className="bg-white px-6 py-4 mt-6"
+      onClick={() => router.push("https://www.similarwatch.com")}
+    >
       <div className="container mx-auto ">
         <div className="flex flex-col space-y-3">
           <div className="flex items-center space-x-6 mb-8 sm:mb-0">

@@ -3,15 +3,24 @@ import React from "react";
 import Link from "next/link";
 import { IoMdSearch, IoMdMenu } from "react-icons/io";
 import { FaGear } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({
   setOpen,
 }: {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const router = useRouter();
   return (
-    <div className="flex items-center justify-between space-x-1 w-full px-6 py-3 bg-white shadow-md sticky right-0 left-0 top-0 z-40">
-      <Link href="/" className="flex items-center text-blue-600">
+    <div
+      onClick={() => router.push("https://www.similarwatch.com")}
+      className="flex items-center justify-between space-x-1 w-full px-6 py-3 bg-white shadow-md sticky right-0 left-0 top-0 z-40"
+    >
+      <Link
+        href="https://www.similarwatch.com"
+        target="_blank"
+        className="flex items-center text-blue-600"
+      >
         <FaGear />
         <span className="font-bold ml-3 text-sm md:text-xl">ZinTools</span>
       </Link>

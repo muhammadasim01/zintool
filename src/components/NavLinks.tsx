@@ -1,8 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SecondaryNavbar = ({ open }: { open: boolean }) => {
+  const router = useRouter();
   return (
-    <div className="bg-white md:my-4">
+    <div
+      className="bg-white md:my-4"
+      onClick={() => router.push("https://www.elements.evanto.com")}
+    >
       <div className="container mx-auto px-4 py-2  md:justify-start md:space-x-8 md:overflow-x-auto hidden md:flex">
         <Link
           className="text-black hover:text-blue-700 font-semibold whitespace-nowrap"
@@ -100,7 +105,7 @@ const SecondaryNavbar = ({ open }: { open: boolean }) => {
             </Link>
             <Link
               className="text-black hover:text-blue-700 font-semibold whitespace-nowrap"
-              href="/graphic-templates"
+              href="https://www.elements.evanto.com"
             >
               Graphic Templates
             </Link>
